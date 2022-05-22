@@ -8,28 +8,50 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    @IBOutlet weak var etiqueta: UILabel!
-    @IBOutlet weak var btCambiarTexto: UIButton!
-    var isTrue = false
-    var n = 0
+   
+    @IBOutlet weak var myButton: UIButton!
+    @IBOutlet weak var myPickerView: UIPickerView!
+    
+    private var myPickerData: [String] = ["uno", "dos", "tres"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        myButton.setTitle("mi Boton", for: .normal)
+        myButton.backgroundColor = .blue
+        myButton.setTitleColor(.white, for: .normal)
+        
+        myPickerView.backgroundColor = .lightGray
+        myPickerView.dataSource = self
+        myPickerView.delegate = self
     }
-
-    @IBAction func cambiarTexto(_ sender: Any) {
-        if n >= 20 {
-            etiqueta.text = "PUTAAAAAAAA"
-        } else if (isTrue) {
-            etiqueta.text="Eres"
-            isTrue = !isTrue
+    
+    @IBAction func myButtonAction(_ sender: Any) {
+        if myButton.backgroundColor == .blue {
+            myButton.backgroundColor = .green
         } else {
-            etiqueta.text="Puta"
-            isTrue = !isTrue
+            myButton.backgroundColor = .blue
         }
-        n += 1
     }
+    
     
 }
 
+extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return myPickerData.count
+    }
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return myPickerData[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        myButton.setTitle(myPickerData[row], for: .normal)
+    }
+    
+}
