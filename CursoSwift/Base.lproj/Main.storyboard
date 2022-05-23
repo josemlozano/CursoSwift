@@ -51,12 +51,19 @@
                                     <action selector="mySliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="au4-vH-zhB"/>
                                 </connections>
                             </slider>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="TNn-NA-Nsr">
+                                <rect key="frame" x="160" y="422" width="94" height="32"/>
+                                <connections>
+                                    <action selector="myStepperAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="03Y-1D-T7e"/>
+                                </connections>
+                            </stepper>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="lOY-YQ-5uk" firstAttribute="top" secondItem="Hzl-GJ-KdB" secondAttribute="bottom" constant="20" id="HPl-qk-a27"/>
                             <constraint firstItem="lbc-PP-X9U" firstAttribute="top" secondItem="evi-Lq-GFE" secondAttribute="bottom" constant="20" id="L4I-0r-0TR"/>
+                            <constraint firstItem="TNn-NA-Nsr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Q4u-4v-uoU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Hzl-GJ-KdB" secondAttribute="trailing" constant="20" id="TnS-tR-fkP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lbc-PP-X9U" secondAttribute="trailing" constant="20" id="ap1-kg-E1k"/>
                             <constraint firstItem="lbc-PP-X9U" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="dFk-p9-j7Z"/>
@@ -64,6 +71,7 @@
                             <constraint firstItem="8dE-wY-x7H" firstAttribute="top" secondItem="lbc-PP-X9U" secondAttribute="bottom" constant="20" id="f2n-B9-Jw2"/>
                             <constraint firstItem="Hzl-GJ-KdB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="gCn-MW-k1a"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8dE-wY-x7H" secondAttribute="trailing" constant="20" id="hAI-J4-rZ8"/>
+                            <constraint firstItem="TNn-NA-Nsr" firstAttribute="top" secondItem="8dE-wY-x7H" secondAttribute="bottom" constant="20" id="iOn-SF-oGb"/>
                             <constraint firstItem="lOY-YQ-5uk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jgU-cE-n8k"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="evi-Lq-GFE" secondAttribute="trailing" constant="20" id="k2S-Nk-m8k"/>
                             <constraint firstItem="Hzl-GJ-KdB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="klp-aA-0Q7"/>
@@ -78,6 +86,7 @@
                         <outlet property="myPickerView" destination="lOY-YQ-5uk" id="TB0-1O-b7D"/>
                         <outlet property="mySegmentedControl" destination="lbc-PP-X9U" id="RYZ-cw-6ox"/>
                         <outlet property="mySlider" destination="8dE-wY-x7H" id="HmS-WF-a9x"/>
+                        <outlet property="myStepper" destination="TNn-NA-Nsr" id="2NO-Gc-F6L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
