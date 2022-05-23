@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,35 +13,57 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CursoSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hzl-GJ-KdB">
-                                <rect key="frame" x="20" y="40" width="374" height="31"/>
+                                <rect key="frame" x="20" y="84" width="374" height="31"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                 <connections>
                                     <action selector="myButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HYg-xo-qZX"/>
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lOY-YQ-5uk">
-                                <rect key="frame" x="0.0" y="91" width="414" height="120"/>
+                                <rect key="frame" x="0.0" y="135" width="414" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="4dV-jR-FVM"/>
                                 </constraints>
                             </pickerView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="evi-Lq-GFE">
-                                <rect key="frame" x="20" y="231" width="374" height="25"/>
+                                <rect key="frame" x="20" y="275" width="374" height="26"/>
                                 <connections>
                                     <action selector="myPageControlAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="PdR-1x-wR1"/>
                                 </connections>
                             </pageControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lbc-PP-X9U">
+                                <rect key="frame" x="20" y="321" width="374" height="32"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                                <connections>
+                                    <action selector="mySegmentControlAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="uBz-i1-bij"/>
+                                </connections>
+                            </segmentedControl>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="8dE-wY-x7H">
+                                <rect key="frame" x="18" y="372" width="378" height="31"/>
+                                <connections>
+                                    <action selector="mySliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="au4-vH-zhB"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="lOY-YQ-5uk" firstAttribute="top" secondItem="Hzl-GJ-KdB" secondAttribute="bottom" constant="20" id="HPl-qk-a27"/>
+                            <constraint firstItem="lbc-PP-X9U" firstAttribute="top" secondItem="evi-Lq-GFE" secondAttribute="bottom" constant="20" id="L4I-0r-0TR"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Hzl-GJ-KdB" secondAttribute="trailing" constant="20" id="TnS-tR-fkP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lbc-PP-X9U" secondAttribute="trailing" constant="20" id="ap1-kg-E1k"/>
+                            <constraint firstItem="lbc-PP-X9U" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="dFk-p9-j7Z"/>
+                            <constraint firstItem="8dE-wY-x7H" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="erV-kc-62H"/>
+                            <constraint firstItem="8dE-wY-x7H" firstAttribute="top" secondItem="lbc-PP-X9U" secondAttribute="bottom" constant="20" id="f2n-B9-Jw2"/>
                             <constraint firstItem="Hzl-GJ-KdB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="gCn-MW-k1a"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8dE-wY-x7H" secondAttribute="trailing" constant="20" id="hAI-J4-rZ8"/>
                             <constraint firstItem="lOY-YQ-5uk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jgU-cE-n8k"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="evi-Lq-GFE" secondAttribute="trailing" constant="20" id="k2S-Nk-m8k"/>
                             <constraint firstItem="Hzl-GJ-KdB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="klp-aA-0Q7"/>
@@ -54,6 +76,8 @@
                         <outlet property="myButton" destination="Hzl-GJ-KdB" id="W1q-cq-llG"/>
                         <outlet property="myPageControl" destination="evi-Lq-GFE" id="9ap-Iq-Bbp"/>
                         <outlet property="myPickerView" destination="lOY-YQ-5uk" id="TB0-1O-b7D"/>
+                        <outlet property="mySegmentedControl" destination="lbc-PP-X9U" id="RYZ-cw-6ox"/>
+                        <outlet property="mySlider" destination="8dE-wY-x7H" id="HmS-WF-a9x"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
