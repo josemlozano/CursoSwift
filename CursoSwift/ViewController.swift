@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var mySegmentedControl: UISegmentedControl!
     @IBOutlet weak var mySlider: UISlider!
     @IBOutlet weak var myStepper: UIStepper!
+    @IBOutlet weak var mySwitch: UISwitch!
     
     private var myPickerData: [String] = ["uno", "dos", "tres", "cuatro", "cinco", "seis"]
     
@@ -28,6 +29,7 @@ class ViewController: UIViewController {
 //        myPickerView.backgroundColor = .lightGray
         myPickerView.dataSource = self
         myPickerView.delegate = self
+        myPickerView.isHidden = true
 
         //PageControl
         myPageControl.numberOfPages = myPickerData.count
@@ -47,9 +49,12 @@ class ViewController: UIViewController {
         mySlider.value = 1
         
         //steppers
-        
         myStepper.minimumValue = 1
         myStepper.maximumValue = Double(myPickerData.count)
+        
+        //switch
+        mySwitch.onTintColor = .purple
+        mySwitch.isOn = false
         
     }
     
@@ -91,6 +96,15 @@ class ViewController: UIViewController {
         let value = myStepper.value
         mySlider.value = Float(value)
     }
+    
+    @IBAction func mySwitchAction(_ sender: Any) {
+        if mySwitch.isOn {
+            myPickerView.isHidden = false
+        } else {
+            myPickerView.isHidden = true
+        }
+    }
+    
     
 }
 
